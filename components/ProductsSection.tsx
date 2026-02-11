@@ -3,7 +3,7 @@
 export function ProductsSection() {
   const products = [
     {
-      name: 'Maskio AI Wristband',
+      name: 'Skio AI Wristband',
       description: 'Real-time sound awareness through intelligent vibration patterns',
       features: [
         'Environmental sound capture',

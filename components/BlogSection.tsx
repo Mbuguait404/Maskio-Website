@@ -21,7 +21,7 @@ export function BlogSection() {
     {
       title: 'From Concept to Hardware',
       excerpt:
-        'A behind-the-scenes look at how we iterated on the Maskio wristband design.',
+        'A behind-the-scenes look at how we iterated on the Skio wristband design.',
       category: 'Product',
       date: 'Jan 8, 2024',
       readTime: '6 min read',

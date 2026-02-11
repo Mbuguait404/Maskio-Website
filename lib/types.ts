@@ -1,5 +1,5 @@
 /**
- * Type definitions for Maskio website
+ * Type definitions for Skio website
  */
 
 export interface NavItem {
