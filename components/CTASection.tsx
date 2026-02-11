@@ -27,113 +27,108 @@ export function CTASection() {
   };
 
   return (
-    <section className="py-20 px-4 bg-background border-b-2 border-black">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-20">
           {/* Left: Heading & Description */}
-          <div>
-            <h2 className="font-display text-5xl md:text-6xl font-bold text-black mb-6">
-              Ready to start something <span className="text-primary">great?</span>
+          <div className="flex flex-col justify-center">
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight">
+              Ready to start something <span className="text-primary italic">great?</span>
             </h2>
-            <p className="text-lg text-gray-dark leading-relaxed mb-8">
-              We'd love to hear about your project and see how we can help bring it to life. Let's create something amazing together.
+            <p className="text-xl text-muted-foreground leading-relaxed mb-12 font-medium">
+              We'd love to hear about your interest in Skio and see how we can help improve sound awareness through our technology.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-4">
-              <div className="border-l-4 border-primary pl-4">
-                <p className="text-sm text-gray-dark font-medium">Email</p>
-                <a href="mailto:hello@maskio.dev" className="text-black font-display font-bold hover:text-primary transition-colors">
-                  hello@maskio.dev
-                </a>
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-primary/5 flex items-center gap-6 group hover:border-primary/20 transition-all">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest mb-1">Email Us</p>
+                  <a href="mailto:hello@skio.ai" className="text-foreground font-bold text-lg hover:text-primary transition-colors">
+                    hello@skio.ai
+                  </a>
+                </div>
               </div>
-              <div className="border-l-4 border-primary pl-4">
-                <p className="text-sm text-gray-dark font-medium">Location</p>
-                <p className="text-black font-display font-bold">San Francisco, CA</p>
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-primary/5 flex items-center gap-6 group hover:border-primary/20 transition-all">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest mb-1">Location</p>
+                  <p className="text-foreground font-bold text-lg">San Francisco, CA</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right: Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Input */}
-            <div>
-              <label htmlFor="name" className="block text-sm text-gray-dark font-medium mb-2">
-                YOUR NAME
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                className="w-full border-2 border-black bg-white text-black px-4 py-3 font-display placeholder:text-gray-medium focus:outline-none focus:bg-primary focus:border-black transition-colors"
-                required
-              />
-            </div>
+          <div className="bg-white rounded-[3rem] p-10 md:p-12 shadow-2xl shadow-black/5 border border-primary/5">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 gap-8">
+                <div>
+                  <label htmlFor="name" className="block text-xs font-bold text-muted-foreground uppercase tracking-widest mb-3 ml-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="w-full bg-gray-light/50 rounded-2xl border-none px-6 py-4 text-foreground placeholder:text-muted-foreground/40 focus:ring-2 focus:ring-primary/20 transition-all outline-none font-medium"
+                    required
+                  />
+                </div>
 
-            {/* Email Input */}
-            <div>
-              <label htmlFor="email" className="block text-sm text-gray-dark font-medium mb-2">
-                EMAIL ADDRESS
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="john@example.com"
-                className="w-full border-2 border-black bg-white text-black px-4 py-3 font-display placeholder:text-gray-medium focus:outline-none focus:bg-primary focus:border-black transition-colors"
-                required
-              />
-            </div>
+                <div>
+                  <label htmlFor="email" className="block text-xs font-bold text-muted-foreground uppercase tracking-widest mb-3 ml-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className="w-full bg-gray-light/50 rounded-2xl border-none px-6 py-4 text-foreground placeholder:text-muted-foreground/40 focus:ring-2 focus:ring-primary/20 transition-all outline-none font-medium"
+                    required
+                  />
+                </div>
 
-            {/* Phone Input */}
-            <div>
-              <label htmlFor="phone" className="block text-sm text-gray-dark font-medium mb-2">
-                PHONE NUMBER
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+1 (555) 000-0000"
-                className="w-full border-2 border-black bg-white text-black px-4 py-3 font-display placeholder:text-gray-medium focus:outline-none focus:bg-primary focus:border-black transition-colors"
-              />
-            </div>
+                <div>
+                  <label htmlFor="message" className="block text-xs font-bold text-muted-foreground uppercase tracking-widest mb-3 ml-1">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="How can Skio help you?"
+                    rows={4}
+                    className="w-full bg-gray-light/50 rounded-2xl border-none px-6 py-4 text-foreground placeholder:text-muted-foreground/40 focus:ring-2 focus:ring-primary/20 transition-all outline-none font-medium resize-none"
+                    required
+                  />
+                </div>
+              </div>
 
-            {/* Message Input */}
-            <div>
-              <label htmlFor="message" className="block text-sm text-gray-dark font-medium mb-2">
-                YOUR MESSAGE
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about your project..."
-                rows={4}
-                className="w-full border-2 border-black bg-white text-black px-4 py-3 font-display placeholder:text-gray-medium focus:outline-none focus:bg-primary focus:border-black transition-colors resize-none"
-              />
-            </div>
+              <button
+                type="submit"
+                className="w-full bg-primary text-white px-8 py-5 rounded-2xl font-bold text-lg hover:bg-primary-dark transition-all shadow-xl shadow-primary/30 hover:-translate-y-1"
+              >
+                SEND MESSAGE
+              </button>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-primary border-2 border-black text-black px-8 py-3 font-display font-bold text-base hover:bg-white hover:text-primary transition-all"
-            >
-              SEND MESSAGE
-            </button>
-
-            <p className="text-xs text-gray-dark">
-              We'll get back to you within 24 hours. Available for projects • Open to collaborate • Let's create together.
-            </p>
-          </form>
+              <p className="text-center text-xs text-muted-foreground font-medium opacity-60">
+                We typically respond within 24 hours.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </section>

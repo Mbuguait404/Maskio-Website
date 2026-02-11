@@ -30,33 +30,33 @@ export function TechnologySection() {
   ];
 
   return (
-    <section id="technology" className="py-20 px-4 bg-background border-b-2 border-black">
+    <section id="technology" className="py-24 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-black mb-4">
-            How the <span className="text-primary">Technology</span> Works
+        <div className="mb-20 text-center md:text-left">
+          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+            How the <span className="text-primary italic">Technology</span> Works
           </h2>
-          <p className="text-lg text-gray-dark max-w-2xl leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
             A sophisticated pipeline combining edge computing, AI inference, and haptic feedback systems.
           </p>
         </div>
 
         {/* Process Steps */}
-        <div className="space-y-6 mb-16">
+        <div className="grid gap-6 mb-20">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="border-2 border-black bg-white p-8 hover:bg-primary hover:text-black transition-all"
+              className="bg-white rounded-[2rem] p-8 hover:bg-primary/5 transition-all duration-300 border border-primary/5 shadow-lg shadow-black/5 group"
             >
-              <div className="flex gap-6">
-                <div className="font-display text-5xl font-bold text-primary hover:text-black transition-colors min-w-20">
+              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+                <div className="text-6xl font-black text-primary/10 group-hover:text-primary/20 transition-colors shrink-0">
                   {step.number}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display font-bold text-2xl text-black mb-3">
+                  <h3 className="font-bold text-2xl text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-dark hover:text-black transition-colors">
+                  <p className="text-muted-foreground font-medium leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -66,111 +66,89 @@ export function TechnologySection() {
         </div>
 
         {/* Technology Stack */}
-        <div className="border-2 border-black bg-gray-light p-12">
-          <h3 className="font-display text-3xl font-bold text-black mb-8">
-            Core <span className="text-primary">Technologies</span>
+        <div className="bg-gray-light rounded-[3rem] p-16 shadow-inner border border-primary/5">
+          <h3 className="text-3xl font-bold text-foreground mb-12">
+            Core <span className="text-primary italic">Technologies</span>
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: 'Machine Learning', desc: 'TensorFlow, PyTorch' },
               { name: 'Audio Signal Processing', desc: 'DSP, FFT Analysis' },
               { name: 'Edge AI', desc: 'On-device inference' },
               { name: 'Embedded Systems', desc: 'ARM-based microcontrollers' },
-              { name: 'Mobile Development', desc: 'React Native, Flutter' },
+              { name: 'Mobile Development', desc: 'Flutter, Android/iOS' },
               { name: 'Haptic Control', desc: 'Precision vibration motors' },
             ].map((tech, index) => (
-              <div key={index} className="border-2 border-black bg-white p-6">
-                <h4 className="font-display font-bold text-black mb-2">{tech.name}</h4>
-                <p className="text-sm text-gray-dark">{tech.desc}</p>
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-primary/5 hover:border-primary/20 transition-all">
+                <h4 className="font-bold text-primary mb-3 text-lg">{tech.name}</h4>
+                <p className="text-sm text-muted-foreground font-medium">{tech.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Architecture Diagram */}
-        <div className="mt-12 border-2 border-black bg-white p-12">
-          <h3 className="font-display text-2xl font-bold text-black mb-8 text-center">
-            System <span className="text-primary">Architecture</span>
+        <div className="mt-20 bg-white rounded-[3rem] p-16 shadow-xl shadow-black/5 border border-primary/5">
+          <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+            System <span className="text-primary italic">Architecture</span>
           </h3>
-          <svg viewBox="0 0 800 400" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-            {/* Input Layer */}
-            <g>
-              <rect x="50" y="20" width="100" height="60" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="100" y="55" textAnchor="middle" className="font-bold fill-black text-sm">
-                MICROPHONE
+          <div className="max-w-4xl mx-auto">
+            <svg viewBox="0 0 800 400" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                  <feOffset dx="0" dy="4" result="offsetblur" />
+                  <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.1" />
+                  </feComponentTransfer>
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Components */}
+              {[
+                { x: 50, label: 'MICROPHONE', color: 'white' },
+                { x: 200, label: 'DSP', color: 'white' },
+                { x: 350, label: 'AI MODEL', color: '#B94545', textColor: 'white' },
+                { x: 500, label: 'LOGIC', color: 'white' },
+                { x: 650, label: 'MOTOR', color: 'white' }
+              ].map((item, i) => (
+                <g key={i} filter="url(#dropShadow)">
+                  <rect x={item.x} y="20" width="120" height="70" rx="15" fill={item.color === 'white' ? 'white' : item.color} stroke="#B94545" strokeWidth="1" />
+                  <text x={item.x + 60} y="60" textAnchor="middle" className={`font-bold text-[10px] tracking-wider ${item.textColor === 'white' ? 'fill-white' : 'fill-primary'}`}>
+                    {item.label}
+                  </text>
+                </g>
+              ))}
+
+              {/* Connections */}
+              {[170, 320, 470, 620].map((x, i) => (
+                <line key={i} x1={x} y1="55" x2={x + 30} y2="55" stroke="#B94545" strokeWidth="2" markerEnd="url(#arrow-head)" />
+              ))}
+
+              {/* Feedback Loop */}
+              <path d="M 710 90 Q 400 300 110 90" fill="none" stroke="#B94545" strokeWidth="2" strokeDasharray="8,8" markerEnd="url(#arrow-head)" opacity="0.3" />
+              <text x="400" y="320" textAnchor="middle" className="font-extrabold fill-primary text-xs tracking-widest uppercase opacity-60">
+                REAL-TIME FEEDBACK & LEARNING
               </text>
-            </g>
 
-            {/* Processing Layer */}
-            <g>
-              <rect x="200" y="20" width="100" height="60" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="250" y="55" textAnchor="middle" className="font-bold fill-black text-sm">
-                DSP
-              </text>
-            </g>
+              <defs>
+                <marker id="arrow-head" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#B94545" />
+                </marker>
+              </defs>
 
-            {/* AI Layer */}
-            <g>
-              <rect x="350" y="20" width="100" height="60" fill="#ADFF2F" stroke="#000" strokeWidth="2" />
-              <text x="400" y="55" textAnchor="middle" className="font-bold fill-black text-sm">
-                AI MODEL
-              </text>
-            </g>
-
-            {/* Logic Layer */}
-            <g>
-              <rect x="500" y="20" width="100" height="60" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="550" y="55" textAnchor="middle" className="font-bold fill-black text-sm">
-                LOGIC
-              </text>
-            </g>
-
-            {/* Output Layer */}
-            <g>
-              <rect x="650" y="20" width="100" height="60" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="700" y="55" textAnchor="middle" className="font-bold fill-black text-sm">
-                MOTOR
-              </text>
-            </g>
-
-            {/* Connections */}
-            <line x1="150" y1="50" x2="200" y2="50" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <line x1="300" y1="50" x2="350" y2="50" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <line x1="450" y1="50" x2="500" y2="50" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
-            <line x1="600" y1="50" x2="650" y2="50" stroke="#000" strokeWidth="2" markerEnd="url(#arrowhead)" />
-
-            {/* Feedback Loop */}
-            <path d="M 700 80 Q 400 250 100 80" fill="none" stroke="#FF6B35" strokeWidth="2" strokeDasharray="5,5" markerEnd="url(#arrowhead-orange)" />
-            <text x="400" y="280" textAnchor="middle" className="font-bold fill-orange text-sm">
-              REAL-TIME FEEDBACK & LEARNING
-            </text>
-
-            <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                <polygon points="0 0, 10 5, 0 10" fill="#000" />
-              </marker>
-              <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                <polygon points="0 0, 10 5, 0 10" fill="#FF6B35" />
-              </marker>
-            </defs>
-
-            {/* Annotations */}
-            <text x="100" y="120" textAnchor="middle" className="fill-gray-dark text-xs">
-              Sound
-            </text>
-            <text x="250" y="120" textAnchor="middle" className="fill-gray-dark text-xs">
-              Extract
-            </text>
-            <text x="400" y="120" textAnchor="middle" className="fill-gray-dark text-xs">
-              Classify
-            </text>
-            <text x="550" y="120" textAnchor="middle" className="fill-gray-dark text-xs">
-              Decide
-            </text>
-            <text x="700" y="120" textAnchor="middle" className="fill-gray-dark text-xs">
-              Vibrate
-            </text>
-          </svg>
+              {/* Annotations */}
+              {[110, 260, 410, 560, 710].map((x, i) => (
+                <text key={i} x={x} y="120" textAnchor="middle" className="fill-muted-foreground text-[10px] font-bold tracking-widest uppercase opacity-40">
+                  {['Sound', 'Extract', 'Classify', 'Decide', 'Vibrate'][i]}
+                </text>
+              ))}
+            </svg>
+          </div>
         </div>
       </div>
     </section>

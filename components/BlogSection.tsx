@@ -52,44 +52,46 @@ export function BlogSection() {
   ];
 
   return (
-    <section id="blog" className="py-20 px-4 bg-gray-light border-b-2 border-black">
+    <section id="blog" className="py-24 px-4 bg-gray-light">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 flex justify-between items-start">
-          <div>
-            <h2 className="font-display text-5xl md:text-6xl font-bold text-black mb-4">
-              Knowledge <span className="text-primary">Hub</span>
+        <div className="mb-20 flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+          <div className="text-center md:text-left">
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+              Knowledge <span className="text-primary italic">Hub</span>
             </h2>
-            <p className="text-lg text-gray-dark max-w-2xl leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
               Insights on assistive technology, AI, product development, and accessibility.
             </p>
           </div>
-          <button className="hidden md:block bg-primary border-2 border-black text-black px-6 py-3 font-display font-bold text-sm hover:bg-white hover:text-primary transition-all">
+          <button className="hidden md:block bg-primary text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-lg shadow-primary/20">
             VIEW ALL POSTS
           </button>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           {articles.map((article, index) => (
             <article
               key={index}
-              className="border-2 border-black bg-white p-8 hover:shadow-lg transition-all group flex flex-col"
+              className="bg-white rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col border border-primary/5 hover:-translate-y-2"
             >
-              <div className="mb-4">
-                <span className="inline-block bg-primary border-2 border-black text-black text-xs font-display font-bold px-3 py-1 group-hover:bg-accent group-hover:border-accent transition-colors">
+              <div className="mb-6">
+                <span className="inline-block bg-primary/10 text-primary text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
                   {article.category}
                 </span>
               </div>
-              <h3 className="font-display font-bold text-xl text-black mb-3 flex-grow group-hover:text-primary transition-colors">
+              <h3 className="font-bold text-2xl text-foreground mb-4 flex-grow group-hover:text-primary transition-colors leading-tight">
                 {article.title}
               </h3>
-              <p className="text-sm text-gray-dark mb-6 flex-grow">{article.excerpt}</p>
-              <div className="border-t-2 border-gray-medium pt-4 flex justify-between items-center text-xs text-gray-dark">
+              <p className="text-sm text-muted-foreground mb-8 flex-grow leading-relaxed font-medium">
+                {article.excerpt.replace(/Maskio/g, 'Skio')}
+              </p>
+              <div className="border-t border-gray-medium/50 pt-6 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase text-muted-foreground/60">
                 <span>{article.date}</span>
                 <span>{article.readTime}</span>
               </div>
-              <button className="mt-4 text-primary font-display font-bold hover:text-accent transition-colors text-sm">
-                READ MORE →
+              <button className="mt-8 text-primary font-bold hover:underline transition-colors text-sm flex items-center gap-2 group-hover:gap-3">
+                READ MORE <span>→</span>
               </button>
             </article>
           ))}
@@ -97,7 +99,7 @@ export function BlogSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="md:hidden bg-primary border-2 border-black text-black px-8 py-3 font-display font-bold text-base hover:bg-white hover:text-primary transition-all w-full md:w-auto">
+          <button className="md:hidden bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:bg-primary-dark transition-all w-full shadow-lg shadow-primary/20">
             VIEW ALL POSTS
           </button>
         </div>

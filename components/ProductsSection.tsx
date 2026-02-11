@@ -38,43 +38,46 @@ export function ProductsSection() {
   ];
 
   return (
-    <section id="products" className="py-20 px-4 bg-gray-light border-b-2 border-black">
+    <section id="products" className="py-24 px-4 bg-gray-light">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-black mb-4">
-            What is <span className="text-primary">Maskio</span>
+        <div className="mb-20 text-center md:text-left">
+          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+            What is <span className="text-primary italic">Skio</span>
           </h2>
-          <p className="text-lg text-gray-dark max-w-3xl leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-medium">
             A complete assistive technology platform combining wearable hardware, AI-driven sound intelligence, 
             and mobile software to convert sound into meaningful tactile feedback.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-16">
           {products.map((product, index) => (
             <div
               key={index}
-              className="border-2 border-black bg-white p-8 hover:shadow-lg transition-all group"
+              className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 group border border-primary/5 hover:-translate-y-2"
             >
-              <p className="text-6xl mb-4">{product.icon}</p>
-              <h3 className="font-display font-bold text-2xl text-black mb-3">
+              <div className="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center text-5xl mb-8 group-hover:scale-110 transition-transform">
+                {product.icon}
+              </div>
+              <h3 className="font-bold text-2xl text-foreground mb-4 group-hover:text-primary transition-colors">
                 {product.name}
               </h3>
-              <p className="text-gray-dark mb-6 text-sm">
+              <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-medium">
                 {product.description}
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-4">
                 {product.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start gap-3 text-sm">
-                    <span className="text-primary font-bold mt-1">▪</span>
-                    <span className="text-gray-dark">{feature}</span>
+                  <li key={fIndex} className="flex items-start gap-3 text-sm font-medium">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 pt-6 border-t-2 border-gray-medium">
-                <button className="text-primary font-display font-bold text-sm hover:text-accent transition-colors">
-                  LEARN MORE →
+              <div className="mt-10 pt-8 border-t border-gray-medium/50">
+                <button className="text-primary font-bold text-sm hover:underline flex items-center gap-2">
+                  LEARN MORE 
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
             </div>
@@ -82,58 +85,67 @@ export function ProductsSection() {
         </div>
 
         {/* Integration Visual */}
-        <div className="border-2 border-black bg-white p-12">
-          <h3 className="font-display text-2xl font-bold text-black mb-8 text-center">
-            The Maskio <span className="text-primary">Ecosystem</span>
+        <div className="bg-white rounded-[3rem] p-16 shadow-xl shadow-black/5 border border-primary/5">
+          <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+            The Skio <span className="text-primary italic">Ecosystem</span>
           </h3>
-          <svg viewBox="0 0 800 300" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-            {/* Wristband */}
-            <g>
-              <rect x="50" y="100" width="120" height="100" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="110" y="155" textAnchor="middle" className="font-bold fill-black text-sm">
-                Wristband
+          <div className="relative max-w-4xl mx-auto">
+            <svg viewBox="0 0 800 300" className="w-full h-auto drop-shadow-sm" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              {/* Wristband */}
+              <g className="hover:opacity-80 transition-opacity cursor-pointer">
+                <rect x="50" y="100" width="140" height="100" rx="20" fill="#B94545" fillOpacity="0.05" stroke="#B94545" strokeWidth="2" strokeDasharray="4 4" />
+                <text x="120" y="155" textAnchor="middle" className="font-bold fill-primary text-sm tracking-wide">
+                  Wristband
+                </text>
+              </g>
+
+              {/* App */}
+              <g className="hover:opacity-80 transition-opacity cursor-pointer">
+                <rect x="330" y="100" width="140" height="100" rx="20" fill="#B94545" fillOpacity="0.05" stroke="#B94545" strokeWidth="2" strokeDasharray="4 4" />
+                <text x="400" y="155" textAnchor="middle" className="font-bold fill-primary text-sm tracking-wide">
+                  Skio App
+                </text>
+              </g>
+
+              {/* Intelligence */}
+              <g className="hover:opacity-80 transition-opacity cursor-pointer">
+                <rect x="610" y="100" width="140" height="100" rx="20" fill="#B94545" fillOpacity="0.05" stroke="#B94545" strokeWidth="2" strokeDasharray="4 4" />
+                <text x="680" y="155" textAnchor="middle" className="font-bold fill-primary text-sm tracking-wide">
+                  AI Engine
+                </text>
+              </g>
+
+              {/* Connection lines */}
+              <path d="M 190 150 L 330 150" stroke="#B94545" strokeWidth="3" markerEnd="url(#arrow-red)" />
+              <path d="M 470 150 L 610 150" stroke="#B94545" strokeWidth="3" markerEnd="url(#arrow-red)" />
+              <path d="M 680 200 C 680 260, 400 260, 400 250" stroke="#B94545" strokeWidth="2" strokeDasharray="8,8" fill="none" opacity="0.3" />
+              <path d="M 400 250 C 400 260, 120 260, 120 200" stroke="#B94545" strokeWidth="2" strokeDasharray="8,8" fill="none" opacity="0.3" />
+
+              <defs>
+                <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#B94545" />
+                </marker>
+              </defs>
+
+              {/* Labels */}
+              <text x="260" y="130" fontSize="11" fill="#B94545" fontWeight="800" textAnchor="middle" className="tracking-widest uppercase opacity-60">
+                CAPTURES
               </text>
-            </g>
-
-            {/* App */}
-            <g>
-              <rect x="340" y="100" width="120" height="100" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="400" y="155" textAnchor="middle" className="font-bold fill-black text-sm">
-                SkioAI App
+              <text x="540" y="130" fontSize="11" fill="#B94545" fontWeight="800" textAnchor="middle" className="tracking-widest uppercase opacity-60">
+                PROCESSES
               </text>
-            </g>
-
-            {/* Intelligence */}
-            <g>
-              <rect x="630" y="100" width="120" height="100" fill="none" stroke="#000" strokeWidth="2" />
-              <text x="690" y="155" textAnchor="middle" className="font-bold fill-black text-sm">
-                AI Engine
+              <text x="400" y="285" fontSize="11" fill="#B94545" fontWeight="800" textAnchor="middle" className="tracking-widest uppercase opacity-60">
+                SYNC & ADAPT
               </text>
-            </g>
-
-            {/* Connection lines */}
-            <line x1="170" y1="150" x2="340" y2="150" stroke="#ADFF2F" strokeWidth="3" markerEnd="url(#arrowhead)" />
-            <line x1="460" y1="150" x2="630" y2="150" stroke="#FF6B35" strokeWidth="3" markerEnd="url(#arrowhead)" />
-            <line x1="690" y1="200" x2="400" y2="250" stroke="#ADFF2F" strokeWidth="2" strokeDasharray="5,5" />
-            <line x1="400" y1="250" x2="110" y2="200" stroke="#ADFF2F" strokeWidth="2" strokeDasharray="5,5" />
-
-            <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                <polygon points="0 0, 10 5, 0 10" fill="#ADFF2F" />
-              </marker>
-            </defs>
-
-            {/* Labels */}
-            <text x="250" y="130" fontSize="12" fill="#FF6B35" fontWeight="bold">
-              CAPTURES
-            </text>
-            <text x="545" y="130" fontSize="12" fill="#FF6B35" fontWeight="bold">
-              PROCESSES
-            </text>
-            <text x="400" y="280" fontSize="12" fill="#ADFF2F" fontWeight="bold" textAnchor="middle">
-              SYNC & ADAPT
-            </text>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
