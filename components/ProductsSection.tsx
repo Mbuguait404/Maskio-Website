@@ -1,10 +1,14 @@
 'use client';
 
+import Link from 'next/link';
+
 export function ProductsSection() {
   const products = [
     {
+      id: 'wristband',
       name: 'Skio AI Wristband',
       description: 'Real-time sound awareness through intelligent vibration patterns',
+      longDescription: 'The Skio AI Wristband is our flagship hardware device. It uses an array of high-precision microphones and a powerful edge AI processor to detect and classify environmental sounds in milliseconds. From doorbells to emergency sirens, it communicates through proprietary haptic vibration patterns that users learn to recognize instinctively.',
       features: [
         'Environmental sound capture',
         'AI sound classification',
@@ -14,8 +18,10 @@ export function ProductsSection() {
       icon: '⌚',
     },
     {
+      id: 'mobile-app',
       name: 'SkioAI Mobile App',
       description: 'Control hub and intelligence layer for your assistive ecosystem',
+      longDescription: 'The SkioAI app acts as the brain of your awareness setup. It allows you to customize haptic sensitivities, train the system to recognize specific household sounds, and view a visual history of environmental alerts. It bridges the gap between raw sound data and actionable awareness.',
       features: [
         'Sound visualization & analysis',
         'Alert configuration & customization',
@@ -25,8 +31,10 @@ export function ProductsSection() {
       icon: '📱',
     },
     {
+      id: 'ai-core',
       name: 'ML + Signal Processing',
       description: 'The intelligence that powers awareness and adaptation',
+      longDescription: 'At the heart of Skio is a proprietary machine learning engine optimized for edge deployment. We use advanced digital signal processing (DSP) and temporal neural networks to isolate important sounds from background noise, ensuring accurate detection even in busy urban environments.',
       features: [
         'Edge AI inference',
         'Audio signal processing',
@@ -44,43 +52,40 @@ export function ProductsSection() {
           <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
             What is <span className="text-primary italic">Skio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed font-medium">
-            A complete assistive technology platform combining wearable hardware, AI-driven sound intelligence, 
-            and mobile software to convert sound into meaningful tactile feedback.
+          <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed font-medium">
+            An integrated ecosystem of hardware and software designed to bridge the sound gap.
           </p>
         </div>
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-3 gap-10 mb-16">
           {products.map((product, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 group border border-primary/5 hover:-translate-y-2"
+              href={`/products/${product.id}`}
+              className="bg-white rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-300 group border border-primary/5 hover:-translate-y-2 block"
             >
-              <div className="w-20 h-20 bg-primary/5 rounded-2xl flex items-center justify-center text-5xl mb-8 group-hover:scale-110 transition-transform">
+              <div className="text-6xl mb-8 group-hover:scale-110 transition-transform duration-300">
                 {product.icon}
               </div>
-              <h3 className="font-bold text-2xl text-foreground mb-4 group-hover:text-primary transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                 {product.name}
               </h3>
-              <p className="text-muted-foreground mb-8 text-sm leading-relaxed font-medium">
+              <p className="text-muted-foreground font-medium mb-8 leading-relaxed">
                 {product.description}
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-8">
                 {product.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start gap-3 text-sm font-medium">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
+                  <li key={fIndex} className="flex items-center gap-3 text-sm font-bold text-foreground/70">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    {feature}
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 pt-8 border-t border-gray-medium/50">
-                <button className="text-primary font-bold text-sm hover:underline flex items-center gap-2">
-                  LEARN MORE 
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </button>
+              <div className="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                LEARN MORE <span>→</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

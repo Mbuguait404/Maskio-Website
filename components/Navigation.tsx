@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { NAV_ITEMS } from '@/lib/constants';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +28,16 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#why" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
-              Why Skio
-            </Link>
-            <Link href="#products" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
-              Products
-            </Link>
-            <Link href="#technology" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
-              Technology
-            </Link>
-            <Link href="#blog" className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
-              Blog
-            </Link>
+            {NAV_ITEMS.map((item) => (
+              <Link 
+                key={item.label} 
+                href={item.href} 
+                className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
             <button className="bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-md shadow-primary/30">
               LET'S TALK
             </button>
@@ -57,18 +56,16 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden border-t border-primary/10 bg-background/95 backdrop-blur-lg">
             <div className="flex flex-col gap-4 p-4">
-              <Link href="#why" className="text-sm font-semibold text-foreground hover:text-primary">
-                Why Skio
-              </Link>
-              <Link href="#products" className="text-sm font-semibold text-foreground hover:text-primary">
-                Products
-              </Link>
-              <Link href="#technology" className="text-sm font-semibold text-foreground hover:text-primary">
-                Technology
-              </Link>
-              <Link href="#blog" className="text-sm font-semibold text-foreground hover:text-primary">
-                Blog
-              </Link>
+              {NAV_ITEMS.map((item) => (
+                <Link 
+                  key={item.label} 
+                  href={item.href} 
+                  className="text-sm font-semibold text-foreground hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <button className="bg-primary text-white px-6 py-3 rounded-full font-bold text-sm w-full hover:bg-primary-dark transition-all">
                 LET'S TALK
               </button>

@@ -8,8 +8,10 @@ export interface NavItem {
 }
 
 export interface Product {
+  id: string;
   name: string;
   description: string;
+  longDescription?: string;
   features: string[];
   icon: string;
 }
@@ -45,11 +47,17 @@ export interface Recognition {
 }
 
 export interface BlogArticle {
+  slug: string;
   title: string;
   excerpt: string;
+  content: string;
   category: string;
   date: string;
   readTime: string;
+  author?: {
+    name: string;
+    role: string;
+  };
 }
 
 export interface ContactFormData {

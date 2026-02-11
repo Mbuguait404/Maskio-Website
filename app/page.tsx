@@ -7,6 +7,7 @@ import { ImpactSection } from '@/components/ImpactSection';
 import { RecognitionSection } from '@/components/RecognitionSection';
 import { BlogSection } from '@/components/BlogSection';
 import { WhySection } from '@/components/WhySection';
+import { DownloadSection } from '@/components/DownloadSection';
 import { CTASection } from '@/components/CTASection';
 import { Footer } from '@/components/Footer';
 
@@ -22,6 +23,7 @@ export default function Home() {
       <RecognitionSection />
       <BlogSection />
       <WhySection />
+      <DownloadSection />
       <CTASection />
       <Footer />
     </main>

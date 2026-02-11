@@ -1,56 +1,9 @@
 'use client';
 
-export function BlogSection() {
-  const articles = [
-    {
-      title: 'The Future of Assistive Technology',
-      excerpt:
-        'How AI and wearables are revolutionizing the way people with hearing loss experience sound.',
-      category: 'Technology',
-      date: 'Jan 15, 2024',
-      readTime: '5 min read',
-    },
-    {
-      title: 'Building for Accessibility',
-      excerpt:
-        'Design principles and engineering practices for creating truly inclusive technology.',
-      category: 'Design',
-      date: 'Jan 12, 2024',
-      readTime: '7 min read',
-    },
-    {
-      title: 'From Concept to Hardware',
-      excerpt:
-        'A behind-the-scenes look at how we iterated on the Skio wristband design.',
-      category: 'Product',
-      date: 'Jan 8, 2024',
-      readTime: '6 min read',
-    },
-    {
-      title: 'Haptic Feedback Engineering',
-      excerpt:
-        'Understanding vibration patterns and how they communicate sound to the user.',
-      category: 'Engineering',
-      date: 'Jan 5, 2024',
-      readTime: '8 min read',
-    },
-    {
-      title: 'Ethical AI in Healthcare',
-      excerpt: 'How we ensure our AI systems are fair, transparent, and user-centric.',
-      category: 'Ethics',
-      date: 'Dec 28, 2023',
-      readTime: '6 min read',
-    },
-    {
-      title: 'Research Collaboration with MIT',
-      excerpt:
-        'Our partnership on advancing sound classification algorithms for edge devices.',
-      category: 'Research',
-      date: 'Dec 21, 2023',
-      readTime: '4 min read',
-    },
-  ];
+import Link from 'next/link';
+import { BLOG_POSTS } from '@/lib/constants';
 
+export function BlogSection() {
   return (
     <section id="blog" className="py-24 px-4 bg-gray-light">
       <div className="max-w-6xl mx-auto">
@@ -70,9 +23,10 @@ export function BlogSection() {
 
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
-          {articles.map((article, index) => (
-            <article
+          {BLOG_POSTS.map((article, index) => (
+            <Link
               key={index}
+              href={`/blog/${article.slug}`}
               className="bg-white rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-300 group flex flex-col border border-primary/5 hover:-translate-y-2"
             >
               <div className="mb-6">
@@ -84,16 +38,16 @@ export function BlogSection() {
                 {article.title}
               </h3>
               <p className="text-sm text-muted-foreground mb-8 flex-grow leading-relaxed font-medium">
-                {article.excerpt.replace(/Maskio/g, 'Skio')}
+                {article.excerpt}
               </p>
               <div className="border-t border-gray-medium/50 pt-6 flex justify-between items-center text-[10px] font-bold tracking-widest uppercase text-muted-foreground/60">
                 <span>{article.date}</span>
                 <span>{article.readTime}</span>
               </div>
-              <button className="mt-8 text-primary font-bold hover:underline transition-colors text-sm flex items-center gap-2 group-hover:gap-3">
+              <div className="mt-8 text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                 READ MORE <span>→</span>
-              </button>
-            </article>
+              </div>
+            </Link>
           ))}
         </div>
 
