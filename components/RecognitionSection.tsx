@@ -3,15 +3,15 @@
 export function RecognitionSection() {
   const recognitions = [
     {
-      title: 'Innovation Lab',
-      organization: 'Y Combinator',
-      description: 'Selected for flagship startup accelerator',
+      title: 'Inclusive Africa Conference 2024',
+      organization: 'INABLE',
+      description: 'Selected to showcase in Africa\'s largest Assistive Technology Conference',
       year: '2024',
     },
     {
-      title: 'Accessibility Award',
-      organization: 'Tech for Social Good',
-      description: 'Recognition for assistive technology innovation',
+      title: 'AI to Amplify – Winning Team',
+      organization: 'Goethe-Institut',
+      description: 'Selected as one of the two final winning teams for AI-driven accessibility innovation',
       year: '2024',
     },
     {
@@ -71,12 +71,24 @@ export function RecognitionSection() {
             Trusted by <span className="text-primary italic">Leading Organizations</span>
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center justify-items-center">
-            {['MIT', 'Stanford', 'Y Combinator', 'TechStars', 'SV Angels'].map((partner, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 w-full text-center shadow-sm border border-primary/5 hover:border-primary/20 transition-all hover:scale-105">
-                <p className="font-black text-primary tracking-tighter text-lg">{partner}</p>
+            {[
+              'Innovate Now',
+              'inABLE',
+              'UDPK',
+              'NCPWD',
+              'KNAD',
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 w-full text-center shadow-sm border border-primary/5 hover:border-primary/20 transition-all hover:scale-105"
+              >
+                <p className="font-black text-primary tracking-tighter text-lg">
+                  {partner}
+                </p>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

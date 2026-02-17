@@ -15,8 +15,8 @@ export function DownloadSection() {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               Get Started with <span className="text-primary italic">Skio</span>
             </h2>
-            <p className="text-xl text-gray-medium max-w-2xl mb-12 font-medium opacity-80">
-              Download the SkioAI app to begin your journey toward enhanced sound awareness. 
+            <p className="text-xl text-gray-medium max-w-2xl mb-12 font-medium opacity-100">
+              Download the SkioAI app to begin your journey toward enhanced sound awareness.
               Available now via direct APK for our early adopters.
             </p>
 
@@ -52,13 +52,13 @@ export function DownloadSection() {
               </div>
 
               {/* APK Download (Active) */}
-              <a 
-                href="/skio-app.apk" 
+              <a
+                href="/skio-app.apk"
                 download
                 className="bg-primary text-white px-10 py-5 rounded-2xl flex items-center gap-6 shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all hover:-translate-y-1 active:scale-95 group"
               >
                 <div className="w-8 h-8 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-0.5 transition-transform"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-y-0.5 transition-transform"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="3" y2="15" /></svg>
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] uppercase tracking-widest font-extrabold opacity-80">Download Direct</p>

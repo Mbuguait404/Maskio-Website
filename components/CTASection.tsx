@@ -43,22 +43,22 @@ export function CTASection() {
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-primary/5 flex items-center gap-6 group hover:border-primary/20 transition-all">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest mb-1">Email Us</p>
-                  <a href="mailto:hello@skio.ai" className="text-foreground font-bold text-lg hover:text-primary transition-colors">
-                    hello@skio.ai
+                  <a href="mailto:skio@skioat.com" className="text-foreground font-bold text-lg hover:text-primary transition-colors">
+                    skio@skioat.com
                   </a>
                 </div>
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-primary/5 flex items-center gap-6 group hover:border-primary/20 transition-all">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest mb-1">Location</p>
-                  <p className="text-foreground font-bold text-lg">San Francisco, CA</p>
+                  <p className="text-foreground font-bold text-lg">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
